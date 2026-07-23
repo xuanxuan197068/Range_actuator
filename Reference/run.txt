@@ -1,0 +1,15 @@
+用部署设备接口拉取项目清单：
+GET /device_scripts/devices/deployed?projectId=...&pageIndex=1&pageSize=200
+从中按公司网络、IP、设备名筛出“主域控 / 辅助域控”，并选一台客户端做抽样。
+
+为每台目标通过 API 创建临时私有脚本：
+POST /device_scripts
+脚本内容 Base64 编码，且只包含查询命令，不安装角色、不改 DNS、不改域配置。
+
+通过 QGA 在 Windows 虚机内执行：
+POST /device_scripts/run/private?mode=qga
+传入目标设备 ID。这里不是直接 SSH、RDP 登录，也不是手工敲进虚机。
+
+轮询执行日志取回真实输出：
+GET /device_scripts/logs?projectId=...&scriptId=...
+重点读取日志里的 outMsg，而不是仅看接口显示“success”。

@@ -1,0 +1,47 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+cookie.txt
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Python packaging/build artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Test, coverage, and temporary artifacts
+.artifacts/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+test-results/
+playwright-report/
+*.log
+*.tmp
+*.temp
+
+# Local virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+.idea/
+.vscode/
+*.swp
+*.swo
