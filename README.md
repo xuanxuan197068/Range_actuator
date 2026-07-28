@@ -94,6 +94,5 @@ python3 -m venv .venv
 .venv/bin/pytest        # 离线单测，不连真实靶场
 ```
 
-## V1 暂不包含
-
-项目部署/取消/reset/清场、删除或修改脚本、公用脚本下发、多阶段工作流、后台任务队列、keyring、浏览器自动登录。
+## 注意事项
+务必让agent读取topo-swagger-summary.md使其熟知调用方式。
