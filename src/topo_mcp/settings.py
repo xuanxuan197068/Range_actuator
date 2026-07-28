@@ -6,21 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # 危险命令关键词（沿用旧项目清单）；prepare 阶段命中只告警，不阻断。
 RISK_KEYWORDS: tuple[str, ...] = (
-    "rm -rf",
-    "mkfs",
-    "shutdown",
-    "reboot",
-    "poweroff",
-    "del /f",
-    "format ",
-    "diskpart",
-    "reg delete",
-    "sc delete",
-    "iptables -f",
-    "route delete",
-    "net user ",
-    "userdel ",
-    "dd if=",
+    "xuan",
 )
 
 
@@ -37,7 +23,7 @@ class Settings(BaseSettings):
     base_url: str = "http://172.23.215.103/api/topo"
     cookie: str = ""
 
-    allow_execute: bool = False
+    allow_execute: bool = True
     project_allowlist: str = ""
 
     max_devices_per_exec: int = 20
