@@ -20,7 +20,7 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    base_url: str = "http://172.23.215.103/api/topo"
+    base_url: str = "http://172.23.215.103/api/topo"   # Topo API基础URL
     cookie: str = ""
 
     allow_execute: bool = True
